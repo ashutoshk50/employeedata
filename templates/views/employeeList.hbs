@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {{>headerlink}}
+</head>
+<body>
+
+    <!---this is header--->
+
+    {{>navbar}}
+
+    <!--form started--->
+
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+<div class="wrapper wrapper--w680">
+<div class="card card-4">
+<div class="card-body">
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="title">{{viewTitle}}</h2>
+   <a href="/createuser" class="btn btn-primary btn--radius-2 btn--blue">+ Add New Employee</a>
+</div>
+
+<table class="table table-sm no-wrap" id="usertable">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+ {{#each allEmployeeList}}
+          <tr>
+            <td class="counter text-center"></td>
+            <td>{{this.first_name}}</td> 
+            <td>{{this.last_name}}</td>
+            <td>{{this.gender}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.phone}}</td>
+             <td>
+                <a href="/{{this._id}}" class="btn btn-sm btn-primary">Edit</a>
+                <a href="/delete/{{this._id}}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+          </tr>  
+
+       {{/each}}   
+
+    </tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+<!---this is footer-->
+
+{{>footer}}
+
+{{>footerlinks}}
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {{>headerlink}}
+</head>
+<body>
+
+    <!---this is header--->
+
+    {{>navbar}}
+
+    <!--form started--->
+
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+<div class="wrapper wrapper--w680">
+<div class="card card-4">
+<div class="card-body">
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h2 class="title">{{viewTitle}}</h2>
+<a href="/employeeList" class="btn btn-primary btn--radius-2 btn--blue">View All Employees</a>
+</div>
+<form action="/" method="POST" autocomplete="off">
+<input type="hidden" value="{{existingData._id}}" name="_id">
+<div class="row row-space">
+<div class="col-6">
+<div class="input-group">
+<label class="label">first name</label>
+<input class="input--style-4" type="text" name="first_name" value="{{existingData.first_name}}">
+</div>
+</div>
+<div class="col-6">
+<div class="input-group">
+<label class="label">last name</label>
+<input class="input--style-4" type="text" name="last_name" value="{{existingData.last_name}}">
+</div>
+</div>
+</div>
+
+<div class="row row-space">
+<div class="col-6">
+<div class="input-group">
+<label class="label">Gender</label>
+<div class="p-t-10">
+<label class="radio-container m-r-45">Male
+<input type="radio" name="gender" value="male" {{{setChecked male gender}}}>
+<span class="checkmark"></span>
+</label>
+<label class="radio-container">Female
+<input type="radio" name="gender" value="female" {{{setChecked female gender}}}>
+<span class="checkmark"></span>
+</label>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row row-space">
+<div class="col-6">
+<div class="input-group">
+<label class="label">Email</label>
+ <input class="input--style-4" type="email" name="email" value="{{existingData.email}}">
+</div>
+</div>
+<div class="col-6">
+<div class="input-group">
+<label class="label">Phone Number</label>
+<input class="input--style-4" type="text" name="phone" value="{{existingData.phone}}">
+</div>
+</div>
+</div>
+
+<div class="p-t-15">
+<button class="btn btn-primary btn--radius-2 btn--blue" type="submit">Submit</button>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<!---this is footer-->
+
+{{>footer}}
+
+{{>footerlinks}}
+</body>
+</html>
